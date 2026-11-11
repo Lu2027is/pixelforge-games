@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelForge Games | Sua próxima aventura começa aqui</title>
+    <style>
+        :root {
+            --bg-color: #0b0e14;
+            --card-bg: #131822;
+            --primary: #9333ea;
+            --primary-hover: #a855f7;
+            --accent: #22c55e;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(11, 14, 20, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 5%;
+            border-bottom: 1px solid #1e293b;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--text-main);
+        }
+
+        .user-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(11,14,20,1)), url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+            padding: 6rem 5%;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+            border-radius: 12px;
+            margin-top: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+            padding-left: 0.8rem;
+        }
+
+        /* Grid de Produtos */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #1e293b;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(147, 51, 234, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.2rem;
+        }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            background: rgba(147, 51, 234, 0.2);
+            color: var(--primary-hover);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--accent);
+            margin: 1rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #07090d;
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-muted);
+            border-top: 1px solid #1e293b;
+            margin-top: 4rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo">Pixel<span>Forge</span></a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Início</a></li>
+                <li><a href="#">Catálogo</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="#">Sobre</a></li>
+            </ul>
+        </nav>
+        <div class="user-actions">
+            <a href="#" class="btn" onclick="alert('Carrinho simulado com sucesso!')">🛒 Carrinho (0)</a>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <span class="tag">Lançamento do Mês</span>
+        <h1>Chronos: O Despertar do Tempo</h1>
+        <p>Viaje por diferentes eras históricas para consertar o fluxo temporal em uma narrativa épica e cheia de escolhas.</p>
+        <a href="#" class="btn" onclick="alert('Redirecionando para a página do jogo!')">Jogar Agora - R$ 149,90</a>
+    </section>
+
+    <!-- Catálogo em Destaque -->
+    <main class="container">
+        <h2 class="section-title">Jogos em Destaque</h2>
+        <div class="grid">
+            <!-- Jogo 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?auto=format&fit=crop&w=500&q=80" alt="Cyber-Knight">
+                <div class="card-content">
+                    <span class="tag">RPG de Ação</span>
+                    <h3>Cyber-Knight: Neon City</h3>
+                    <p class="price">R$ 199,90</p>
+                    <a href="#" class="btn" style="width: 100%; text-align: center; display: block;" onclick="alert('Adicionado ao carrinho!')">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Jogo 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=500&q=80" alt="Starfarer">
+                <div class="card-content">
+                    <span class="tag">Exploração</span>
+                    <h3>Starfarer: Lost Odyssey</h3>
+                    <p class="price">R$ 129,90</p>
+                    <a href="#" class="btn" style="width: 100%; text-align: center; display: block;" onclick="alert('Adicionado ao carrinho!')">Comprar</a>
+                </div>
+            </div>
+
+            <!-- Jogo 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=500&q=80" alt="Mage's Tavern">
+                <div class="card-content">
+                    <span class="tag">Indie / Estratégia</span>
+                    <h3>Mage's Tavern</h3>
+                    <p class="price">R$ 39,90</p>
+                    <a href="#" class="btn" style="width: 100%; text-align: center; display: block;" onclick="alert('Adicionado ao carrinho!')">Comprar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 PixelForge Games. Todos os direitos reservados. (Site Fictício)</p>
+    </footer>
+
+</body>
+  </html>
